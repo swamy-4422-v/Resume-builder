@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive Resume Builder</title>
+  <link rel="stylesheet" href="mini.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="form-section">
+      <h2>Resume Builder:</h2>
+      <form id="resume-form">
+        <label>Name of the Student:</label>
+        <input type="text" placeholder="Full Name" id="name" />
+        <label>Student Email Id:</label>
+        <input type="email" placeholder="Email" id="email" />
+        <label>Student Phone Number:</label>
+        <input type="tel" placeholder="Phone Number" id="phone" />
+        <label>About Student:</label>
+        <textarea placeholder="Profile Summary" id="summary"></textarea>
+
+        <h3>Education:</h3>
+        <div id="education-fields">
+          <input type="text" placeholder="e.g., BTech. Computer Science at ABCD University" />
+        </div>
+        <button type="button" onclick="addEducation()">+ Add More</button>
+
+        <h3>Skills:</h3>
+        <input type="text" placeholder="e.g., HTML, CSS, JavaScript" id="skills" />
+
+        <h3>Experience:</h3>
+        <div id="experience-fields">
+          <input type="text" placeholder="e.g., Web Developer at ABC(20__-20__)" />
+        </div>
+        <button type="button" onclick="addExperience()">+ Add More</button>
+      </form>
+    </section>
+
+    <section class="preview-section">
+      <h2>Resume Preview:</h2>
+      <div id="resume-preview">
+        <h1 id="preview-name">Your Name :</h1>
+        <p id="preview-contact">Email</p>
+        <p id="preview-phone">Phone Number</p>
+        <h3>Profile Summary :</h3>
+        <p id="preview-summary">Your brief bio goes here.</p>
+        <h3>Education :</h3>
+        <ul id="preview-education"></ul>
+        <h3>Skills :</h3>
+        <p id="preview-skills"></p>
+        <h3>Experience :</h3>
+        <ul id="preview-experience"></ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="mini.js"></script>
+</body>
+</html>
