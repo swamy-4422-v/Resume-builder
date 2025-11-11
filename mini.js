@@ -15,32 +15,23 @@ function updatePreview() {
     summary || 'A concise summary of your professional background.';
   document.getElementById('preview-skills').textContent = skills;
 
-  // Education
-  const eduInputs = document.querySelectorAll('#education-fields input');
-  const eduList = document.getElementById('preview-education');
-  eduList.innerHTML = '';
-  eduInputs.forEach(input => {
-    if (input.value.trim()) {
-      const li = document.createElement('li');
-      li.textContent = input.value.trim();
-      eduList.appendChild(li);
-    }
-  });
+  updateList('#education-fields input', '#preview-education');
+  updateList('#experience-fields input', '#preview-experience');
+}
 
-  // Experience
-  const expInputs = document.querySelectorAll('#experience-fields input');
-  const expList = document.getElementById('preview-experience');
-  expList.innerHTML = '';
-  expInputs.forEach(input => {
+function updateList(selector, target) {
+  const inputs = document.querySelectorAll(selector);
+  const list = document.querySelector(target);
+  list.innerHTML = '';
+  inputs.forEach(input => {
     if (input.value.trim()) {
       const li = document.createElement('li');
       li.textContent = input.value.trim();
-      expList.appendChild(li);
+      list.appendChild(li);
     }
   });
 }
 
-// Add new Education field
 function addEducation() {
   const container = document.getElementById('education-fields');
   const input = document.createElement('input');
@@ -50,7 +41,6 @@ function addEducation() {
   container.appendChild(input);
 }
 
-// Add new Experience field
 function addExperience() {
   const container = document.getElementById('experience-fields');
   const input = document.createElement('input');
@@ -59,4 +49,3 @@ function addExperience() {
   input.addEventListener('input', updatePreview);
   container.appendChild(input);
 }
-
