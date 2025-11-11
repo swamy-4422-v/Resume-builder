@@ -1,11 +1,12 @@
-
 body {
   font-family: 'Poppins', 'Segoe UI', sans-serif;
   background-color: #F9FAFB;
   color: #111827;
   margin: 0;
   padding: 0;
+  min-height: 100vh;
 }
+
 .app-header {
   text-align: center;
   padding: 20px;
@@ -15,18 +16,19 @@ body {
   font-weight: 600;
   letter-spacing: 0.5px;
 }
-
 .container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 30px;
   padding: 40px;
-  flex-wrap: wrap;
 }
 
 .form-section,
 .preview-section {
-  flex: 1 1 48%;
+  flex: 1 1 480px;      
+  min-width: 320px;        
+  max-width: calc(50% - 15px);
   background-color: #fff;
   border-radius: 14px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
@@ -39,7 +41,6 @@ body {
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(30, 64, 175, 0.1);
 }
-
 .section-title {
   font-size: 20px;
   font-weight: 700;
@@ -65,7 +66,7 @@ textarea {
   border: 1px solid #CBD5E1;
   background-color: #F9FAFB;
   font-size: 14px;
-  transition: 0.3s;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input:focus,
@@ -75,6 +76,7 @@ textarea:focus {
   outline: none;
   background-color: #fff;
 }
+
 button {
   background: linear-gradient(135deg, #6B7280, #10B981);
   color: white;
@@ -100,13 +102,14 @@ button:hover {
   background: #fff;
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 0 0 1px #e5e7eb;
+  box-shadow: 0 0 0 1px #E5E7EB;
   min-height: 80vh;
 }
 
 #resume-preview h1 {
   color: #1E40AF;
   font-size: 26px;
+  font-weight: 700;
   margin-bottom: 6px;
 }
 
@@ -131,10 +134,12 @@ button:hover {
   font-size: 14px;
   margin-bottom: 6px;
 }
+
+/* ===== FOOTER ===== */
 .footer {
   text-align: center;
   padding: 15px;
-  background: #F1F5F9;
+  background-color: #F1F5F9;
   color: #1E40AF;
   font-size: 14px;
   font-weight: 500;
@@ -149,6 +154,7 @@ button:hover {
   .form-section,
   .preview-section {
     flex: 1 1 100%;
+    max-width: 100%;
   }
 }
 @media print {
