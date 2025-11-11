@@ -16,6 +16,7 @@ body {
   font-weight: 600;
   letter-spacing: 0.5px;
 }
+
 .container {
   display: flex;
   justify-content: space-between;
@@ -26,9 +27,9 @@ body {
 
 .form-section,
 .preview-section {
-  flex: 1 1 480px;      
-  min-width: 320px;        
-  max-width: calc(50% - 15px);
+  flex: 1 1 480px;    
+  min-width: 320px;       
+  max-width: calc(50% - 15px); 
   background-color: #fff;
   border-radius: 14px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
@@ -41,6 +42,7 @@ body {
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(30, 64, 175, 0.1);
 }
+
 .section-title {
   font-size: 20px;
   font-weight: 700;
@@ -76,7 +78,6 @@ textarea:focus {
   outline: none;
   background-color: #fff;
 }
-
 button {
   background: linear-gradient(135deg, #6B7280, #10B981);
   color: white;
@@ -98,6 +99,7 @@ button:hover {
   background: linear-gradient(135deg, #1E40AF, #10B981);
   margin-top: 15px;
 }
+
 .resume-paper {
   background: #fff;
   padding: 30px;
@@ -135,7 +137,6 @@ button:hover {
   margin-bottom: 6px;
 }
 
-/* ===== FOOTER ===== */
 .footer {
   text-align: center;
   padding: 15px;
@@ -144,7 +145,6 @@ button:hover {
   font-size: 14px;
   font-weight: 500;
 }
-
 @media (max-width: 900px) {
   .container {
     flex-direction: column;
@@ -157,6 +157,7 @@ button:hover {
     max-width: 100%;
   }
 }
+
 @media print {
   .app-header,
   .form-section,
