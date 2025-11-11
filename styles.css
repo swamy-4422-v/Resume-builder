@@ -1,103 +1,134 @@
+/* ====== Global Styles ====== */
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background:linear-gradient(to right,#ffffff,#dcedff);
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  background-color: #F9FAFB;
+  color: #111827;
   margin: 0;
   padding: 0;
+  min-height: 100vh;
 }
 
+/* ====== Layout Container ====== */
 .container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  padding: 30px;
+  gap: 30px;
+  padding: 40px;
+  justify-content: center;
 }
 
-.form-section{
-  flex: 1 1 45%;
-  background: linear-gradient(to right,#dcedff,#ffffff);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
+/* ====== Form + Preview Sections ====== */
+.form-section,
 .preview-section {
   flex: 1 1 45%;
-  background: linear-gradient(to right,#dcedff,#ffffff);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background-color: #FFFFFF;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid #E5E7EB;
 }
 
+.form-section:hover,
+.preview-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(30, 64, 175, 0.12);
+}
+
+/* ====== Labels ====== */
 label {
-  display: inline-block;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #333;
-  font-size: 14px;
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #1E40AF;
+  font-size: 15px;
 }
 
-input{
-  width: 100%;
-  margin-bottom: 15px;
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  transition: border 0.3s;
-}
-
+/* ====== Inputs & Textareas ====== */
+input,
 textarea {
   width: 100%;
-  margin-bottom: 15px;
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  transition: border 0.3s;
+  margin-bottom: 18px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #CBD5E1;
+  background-color: #F9FAFB;
+  font-size: 14px;
+  color: #111827;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-input:focus{
-  border: 1px solid #007BFF;
-}
-
+input:focus,
 textarea:focus {
-  border: 1px solid #007BFF;
+  border-color: #1E40AF;
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.2);
+  background-color: #FFFFFF;
+  outline: none;
 }
 
+/* ====== Buttons ====== */
 button {
-  background-color: #007BFF;
-  color: white;
-  padding: 8px 15px;
+  background: linear-gradient(135deg, #6B7280, #10B981);
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px 20px;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   cursor: pointer;
-  margin-bottom: 10px;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
 }
 
 button:hover {
-  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35);
+  filter: brightness(1.05);
 }
 
-#resume-preview h1{
-  margin-bottom: 5px;
+/* ====== Preview Section ====== */
+#resume-preview {
+  line-height: 1.6;
+}
+
+#resume-preview h1 {
+  color: #1E40AF;
+  font-size: 28px;
+  margin-bottom: 6px;
 }
 
 #resume-preview h3 {
-  margin-bottom: 5px;
+  color: #10B981;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
 ul {
-  padding-left: 20px;
+  padding-left: 25px;
+  list-style-type: disc;
 }
 
+/* ====== Responsive Design ====== */
 @media (max-width: 768px) {
-  .form-section{
-    flex: 1 1 100%;
+  .container {
+    padding: 20px;
   }
+  .form-section,
   .preview-section {
     flex: 1 1 100%;
   }
 }
 
+/* ====== Print View ====== */
 @media print {
-  .form-section, button { display: none; }
-  .preview-section { width: 100%; box-shadow: none; }
+  .form-section, button {
+    display: none;
+  }
+  .preview-section {
+    width: 100%;
+    box-shadow: none;
+    background: white;
+  }
 }
+
