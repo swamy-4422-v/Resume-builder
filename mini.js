@@ -2,32 +2,37 @@ const form = document.getElementById('resume-form');
 form.addEventListener('input', updatePreview);
 
 function updatePreview() {
-  const name = document.getElementById('name').value.trim() || 'Your Name';
-  const email = document.getElementById('email').value.trim();
-  const phone = document.getElementById('phone').value.trim();
-  const summary = document.getElementById('summary').value.trim();
-  const skills = document.getElementById('skills').value.trim();
 
-  document.getElementById('preview-name').textContent = name;
+  document.getElementById('preview-name').textContent =
+    document.getElementById('name').value || 'Your Name';
   document.getElementById('preview-contact').textContent =
-    [email && `📧 ${email}`, phone && `📞 ${phone}`].filter(Boolean).join(' | ') || '';
+    document.getElementById('email').value || '';
+  document.getElementById('preview-phone').textContent =
+    document.getElementById('phone').value || '';
   document.getElementById('preview-summary').textContent =
-    summary || 'A concise summary of your professional background.';
-  document.getElementById('preview-skills').textContent = skills;
+    document.getElementById('summary').value || '';
+  document.getElementById('preview-skills').textContent =
+    document.getElementById('skills').value || '';
 
-  updateList('#education-fields input', '#preview-education');
-  updateList('#experience-fields input', '#preview-experience');
-}
-
-function updateList(selector, target) {
-  const inputs = document.querySelectorAll(selector);
-  const list = document.querySelector(target);
-  list.innerHTML = '';
-  inputs.forEach(input => {
+  const eduInputs = document.querySelectorAll('#education-fields input');
+  const eduList = document.getElementById('preview-education');
+  eduList.innerHTML = '';
+  eduInputs.forEach((input) => {
     if (input.value.trim()) {
       const li = document.createElement('li');
-      li.textContent = input.value.trim();
-      list.appendChild(li);
+      li.textContent = input.value;
+      eduList.appendChild(li);
+    }
+  });
+
+  const expInputs = document.querySelectorAll('#experience-fields input');
+  const expList = document.getElementById('preview-experience');
+  expList.innerHTML = '';
+  expInputs.forEach((input) => {
+    if (input.value.trim()) {
+      const li = document.createElement('li');
+      li.textContent = input.value;
+      expList.appendChild(li);
     }
   });
 }
