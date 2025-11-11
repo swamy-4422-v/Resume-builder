@@ -2,59 +2,78 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Interactive Resume Builder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATS-Friendly Resume Builder</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <header class="app-header">
+    <h1>ATS-Friendly Resume Builder</h1>
+  </header>
+
   <main class="container">
+    <!-- Left: Resume Builder -->
     <section class="form-section">
-      <h2>Resume Builder:</h2>
+      <h2 class="section-title">Resume Builder</h2>
+
       <form id="resume-form">
-        <label>Name of the Student:</label>
-        <input type="text" placeholder="Full Name" id="name" />
-        <label>Student Email Id:</label>
-        <input type="email" placeholder="Email" id="email" />
-        <label>Student Phone Number:</label>
-        <input type="tel" placeholder="Phone Number" id="phone" />
-        <label>About Student:</label>
-        <textarea placeholder="Profile Summary" id="summary"></textarea>
+        <label>Full Name:</label>
+        <input type="text" id="name" placeholder="Enter your full name" />
 
-        <h3>Education:</h3>
+        <label>Email Address:</label>
+        <input type="email" id="email" placeholder="Enter your email" />
+
+        <label>Phone Number:</label>
+        <input type="tel" id="phone" placeholder="Enter your phone number" />
+
+        <label>Professional Summary:</label>
+        <textarea id="summary" placeholder="Brief summary of your skills and experience"></textarea>
+
+        <h3>Education</h3>
         <div id="education-fields">
-          <input type="text" placeholder="e.g., BTech. Computer Science at ABCD University" />
+          <input type="text" placeholder="e.g., B.Tech in Computer Science, XYZ University (2021)" />
         </div>
-        <button type="button" onclick="addEducation()">+ Add More</button>
+        <button type="button" onclick="addEducation()">+ Add Education</button>
 
-        <h3>Skills:</h3>
-        <input type="text" placeholder="e.g., HTML, CSS, JavaScript" id="skills" />
+        <h3>Skills</h3>
+        <input type="text" id="skills" placeholder="e.g., JavaScript, Node.js, React" />
 
-        <h3>Experience:</h3>
+        <h3>Experience</h3>
         <div id="experience-fields">
-          <input type="text" placeholder="e.g., Web Developer at ABC(20__-20__)" />
+          <input type="text" placeholder="e.g., Web Developer, ABC Corp (2022–Present)" />
         </div>
-        <button type="button" onclick="addExperience()">+ Add More</button>
+        <button type="button" onclick="addExperience()">+ Add Experience</button>
+
+        <button type="button" class="download-btn" onclick="window.print()">Download PDF</button>
       </form>
     </section>
 
+    <!-- Right: Resume Preview -->
     <section class="preview-section">
-      <h2>Resume Preview:</h2>
+      <h2 class="section-title">Resume Preview</h2>
       <div id="resume-preview">
-        <h1 id="preview-name">Your Name :</h1>
-        <p id="preview-contact">Email</p>
-        <p id="preview-phone">Phone Number</p>
-        <h3>Profile Summary :</h3>
-        <p id="preview-summary">Your brief bio goes here.</p>
-        <h3>Education :</h3>
+        <h1 id="preview-name">Your Name</h1>
+        <p id="preview-contact">📧 your@email.com | 📞 +91 00000 00000</p>
+
+        <h3>Professional Summary</h3>
+        <p id="preview-summary">A concise summary of your professional background.</p>
+
+        <h3>Education</h3>
         <ul id="preview-education"></ul>
-        <h3>Skills :</h3>
+
+        <h3>Skills</h3>
         <p id="preview-skills"></p>
-        <h3>Experience :</h3>
+
+        <h3>Experience</h3>
         <ul id="preview-experience"></ul>
       </div>
     </section>
   </main>
 
-  <script src="mini.js"></script>
+  <footer class="footer">
+    <p>Built with ❤️ | Smart Resume Builder</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
