@@ -1,4 +1,4 @@
-/* ===== BASE ===== */
+
 body {
   font-family: 'Poppins', 'Segoe UI', sans-serif;
   background-color: #F9FAFB;
@@ -6,8 +6,6 @@ body {
   margin: 0;
   padding: 0;
 }
-
-/* ===== HEADER ===== */
 .app-header {
   text-align: center;
   padding: 20px;
@@ -18,7 +16,6 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* ===== LAYOUT ===== */
 .container {
   display: flex;
   justify-content: space-between;
@@ -43,7 +40,6 @@ body {
   box-shadow: 0 10px 25px rgba(30, 64, 175, 0.1);
 }
 
-/* ===== TITLES ===== */
 .section-title {
   font-size: 20px;
   font-weight: 700;
@@ -53,7 +49,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* ===== FORM ELEMENTS ===== */
 label {
   display: block;
   font-weight: 600;
@@ -80,8 +75,6 @@ textarea:focus {
   outline: none;
   background-color: #fff;
 }
-
-/* ===== BUTTONS ===== */
 button {
   background: linear-gradient(135deg, #6B7280, #10B981);
   color: white;
@@ -103,8 +96,6 @@ button:hover {
   background: linear-gradient(135deg, #1E40AF, #10B981);
   margin-top: 15px;
 }
-
-/* ===== RESUME PREVIEW ===== */
 .resume-paper {
   background: #fff;
   padding: 30px;
@@ -140,8 +131,6 @@ button:hover {
   font-size: 14px;
   margin-bottom: 6px;
 }
-
-/* ===== FOOTER ===== */
 .footer {
   text-align: center;
   padding: 15px;
@@ -151,7 +140,6 @@ button:hover {
   font-weight: 500;
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
   .container {
     flex-direction: column;
@@ -163,8 +151,6 @@ button:hover {
     flex: 1 1 100%;
   }
 }
-
-/* ===== PRINT VIEW ===== */
 @media print {
   .app-header,
   .form-section,
